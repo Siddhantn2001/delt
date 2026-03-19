@@ -482,6 +482,11 @@ a { text-decoration: none; color: inherit; }
 .lf-link { font-size: 0.95rem; color: rgba(255,255,255,0.4); transition: color 0.15s; cursor: pointer; }
 .lf-link:hover { color: rgba(255,255,255,0.8); }
 .lf-bottom { display: flex; align-items: center; justify-content: space-between; font-size: 0.72rem; }
+.lf-columns { display: grid; grid-template-columns: repeat(5,1fr); gap: 2rem; margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.lf-col { display: flex; flex-direction: column; gap: 10px; }
+.lf-col-title { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.85); margin-bottom: 4px; font-family: var(--B); }
+.lf-col span { font-size: 0.8rem; color: rgba(255,255,255,0.35); font-family: var(--B); cursor: default; line-height: 1.5; }
+@media (max-width: 768px) { .lf-columns { grid-template-columns: repeat(2,1fr) !important; gap: 2rem 1.5rem !important; } }
 
 /* ═══════════════════════════════════════
    SCREEN 2 — ADMIN
@@ -851,15 +856,12 @@ td { padding: 14px 16px; font-size: 1rem; color: var(--ink3); vertical-align: mi
 
 /* ── FOOTER ADMIN TRIGGER ────────────────────── */
 .footer-admin-trigger {
-  position: fixed; bottom: 20px; left: 20px; z-index: 50;
-  width: 36px; height: 36px; border-radius: 50%;
-  background: rgba(14,13,12,0.04); border: 1px solid var(--line);
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer; transition: all 0.2s; opacity: 0.3;
-  font-size: 0.6rem; color: var(--ink4); letter-spacing: 0.05em;
-  font-family: var(--B);
+  position: fixed; bottom: 24px; left: 24px; z-index: 50;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--line2);
+  cursor: pointer; transition: all 0.2s; opacity: 0.4;
 }
-.footer-admin-trigger:hover { opacity: 0.7; background: var(--off2); }
+.footer-admin-trigger:hover { opacity: 1; background: var(--sage); }
 
 /* ════════════════════════════════════════
    MOBILE RESPONSIVE
@@ -1551,6 +1553,17 @@ td { padding: 14px 16px; font-size: 1rem; color: var(--ink3); vertical-align: mi
     font-size: 1.7rem !important;
   }
 }
+
+@media (max-width: 768px) {
+  .land-footer { padding: 2.5rem 1.25rem 1.5rem !important; }
+  .land-footer > div > div:first-child { flex-direction: column !important; gap: 1rem !important; }
+  .land-footer .lf-links { display: none !important; }
+  .land-footer [style*="grid-template-columns:repeat(5"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2rem 1.5rem !important;
+  }
+  .lf-bottom { flex-direction: column !important; gap: 0.5rem !important; text-align: center !important; }
+}
 </style>
 </head>
 <body>
@@ -1979,6 +1992,8 @@ td { padding: 14px 16px; font-size: 1rem; color: var(--ink3); vertical-align: mi
   <!-- FOOTER -->
   <footer class="land-footer">
     <div class="container-lg">
+
+      <!-- Top row -->
       <div class="lf-top">
         <div>
           <div class="lf-logo">DELT</div>
@@ -1988,9 +2003,59 @@ td { padding: 14px 16px; font-size: 1rem; color: var(--ink3); vertical-align: mi
           <span class="lf-link" onclick="smoothScroll('#hiw')">How It Works</span>
           <span class="lf-link" onclick="smoothScroll('#trust')">Trust Score</span>
           <span class="lf-link" onclick="smoothScroll('#waitlist')">Join Waitlist</span>
-          <span class="lf-link" onclick="showAdmin()">Admin</span>
         </div>
       </div>
+
+      <!-- Footer columns -->
+      <div class="lf-columns">
+
+        <div class="lf-col">
+          <div class="lf-col-title">For Creators</div>
+          <span>DELT For Creators</span>
+          <span>Creator Stores</span>
+          <span>Affiliate Links</span>
+          <span>Brand Partnerships</span>
+          <span>Apply to be a Creator</span>
+        </div>
+
+        <div class="lf-col">
+          <div class="lf-col-title">For Brands</div>
+          <span>DELT For Brands</span>
+          <span>Discover Creators</span>
+          <span>Engage</span>
+          <span>Track</span>
+          <span>Amplify</span>
+        </div>
+
+        <div class="lf-col">
+          <div class="lf-col-title">For Shoppers</div>
+          <span>Shop By Creator</span>
+          <span>Shop By Brand</span>
+          <span>Shop By Category</span>
+          <span>My Favourites</span>
+          <span>My Taste Profile</span>
+        </div>
+
+        <div class="lf-col">
+          <div class="lf-col-title">Explore</div>
+          <span>Blog</span>
+          <span>About Us</span>
+          <span>Careers</span>
+          <span>Shop All Categories</span>
+        </div>
+
+        <div class="lf-col">
+          <div class="lf-col-title">Support + Legal</div>
+          <span>Creator How-To Guide</span>
+          <span>Brand Guide</span>
+          <span>Contact Us</span>
+          <span>Terms of Service</span>
+          <span>Privacy</span>
+        </div>
+
+      </div>
+
+      <!-- Bottom bar -->
       <div class="lf-bottom">
         <span>© 2026 DELT Commerce Pvt. Ltd. Made in India 🇮🇳</span>
         <span>hello@delt.in</span>
@@ -3007,7 +3072,7 @@ load();
 </div>
 
 <!-- FOOTER ADMIN TRIGGER (hidden bottom-left dot) -->
-<div class="footer-admin-trigger" onclick="document.getElementById('loginOverlay').classList.remove('hide')" title="Admin">⬡</div>
+<div class="footer-admin-trigger" onclick="document.getElementById('loginOverlay').classList.remove('hide')" title=""></div>
 
 </body>
 </html>
