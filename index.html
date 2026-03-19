@@ -855,13 +855,8 @@ td { padding: 14px 16px; font-size: 1rem; color: var(--ink3); vertical-align: mi
 .login-note { font-size: 0.72rem; color: var(--ink4); text-align: center; margin-top: 1rem; }
 
 /* ── FOOTER ADMIN TRIGGER ────────────────────── */
-.footer-admin-trigger {
-  position: fixed; bottom: 24px; left: 24px; z-index: 50;
-  width: 8px; height: 8px; border-radius: 50%;
-  background: var(--line2);
-  cursor: pointer; transition: all 0.2s; opacity: 0.4;
-}
-.footer-admin-trigger:hover { opacity: 1; background: var(--sage); }
+
+
 
 /* ════════════════════════════════════════
    MOBILE RESPONSIVE
@@ -972,7 +967,7 @@ td { padding: 14px 16px; font-size: 1rem; color: var(--ink3); vertical-align: mi
   .login-card { max-width: 100%; margin: 0 1rem; }
 
   /* FOOTER ADMIN TRIGGER */
-  .footer-admin-trigger { bottom: 16px; left: 16px; }
+  
 }
 
 @media (max-width: 390px) {
@@ -1564,6 +1559,7 @@ td { padding: 14px 16px; font-size: 1rem; color: var(--ink3); vertical-align: mi
   }
   .lf-bottom { flex-direction: column !important; gap: 0.5rem !important; text-align: center !important; }
 }
+.footer-admin-trigger { display: none !important; }
 </style>
 </head>
 <body>
@@ -2003,6 +1999,7 @@ td { padding: 14px 16px; font-size: 1rem; color: var(--ink3); vertical-align: mi
           <span class="lf-link" onclick="smoothScroll('#hiw')">How It Works</span>
           <span class="lf-link" onclick="smoothScroll('#trust')">Trust Score</span>
           <span class="lf-link" onclick="smoothScroll('#waitlist')">Join Waitlist</span>
+          <span class="lf-link" onclick="showAdmin()" style="opacity:0.4;">Admin</span>
         </div>
       </div>
 
@@ -2057,7 +2054,7 @@ td { padding: 14px 16px; font-size: 1rem; color: var(--ink3); vertical-align: mi
 
       <!-- Bottom bar -->
       <div class="lf-bottom">
-        <span>© 2026 DELT Commerce Pvt. Ltd. Made in India 🇮🇳</span>
+        <span>© 2026 DELT Commerce Pvt. Ltd.</span>
         <span>hello@delt.in</span>
       </div>
     </div>
@@ -3072,7 +3069,7 @@ load();
 </div>
 
 <!-- FOOTER ADMIN TRIGGER (hidden bottom-left dot) -->
-<div class="footer-admin-trigger" onclick="document.getElementById('loginOverlay').classList.remove('hide')" title=""></div>
+
 
 </body>
 </html>
