@@ -1381,6 +1381,176 @@ td { padding: 14px 16px; font-size: 1rem; color: var(--ink3); vertical-align: mi
   /* Float stats off screen on mobile */
   .float-stat { display: none !important; }
 }
+
+/* ══════════════════════════════════════════════════
+   MOBILE HERO — COMPLETE FIX
+   Scoped strictly to max-width: 768px
+   Desktop untouched.
+══════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* ── NAV ── */
+  .land-nav {
+    height: 60px !important;
+    padding: 0 1.25rem !important;
+  }
+  .nav-logo {
+    font-size: 1.75rem !important;
+  }
+  .land-nav.scrolled .nav-logo {
+    font-size: 1.75rem !important;
+  }
+  .nav-links { display: none !important; }
+  .nav-actions { gap: 8px !important; margin-left: auto !important; }
+  .glass-btn-text {
+    padding: 9px 18px !important;
+    font-size: 0.78rem !important;
+    letter-spacing: 0.06em !important;
+  }
+
+  /* ── HERO CONTAINER ── */
+  .hero {
+    padding: 7rem 1.5rem 3.5rem !important;
+    min-height: 100svh !important;
+    align-items: flex-end !important;
+  }
+  .hero-grid {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+  /* Stronger overlay on mobile for readability */
+  .hero-bg::after {
+    background: linear-gradient(
+      to bottom,
+      rgba(5,3,10,0.45) 0%,
+      rgba(5,3,10,0.65) 50%,
+      rgba(5,3,10,0.82) 100%
+    ) !important;
+  }
+
+  /* ── EYEBROW ── */
+  .hero-eyebrow {
+    font-size: 0.6rem !important;
+    letter-spacing: 0.16em !important;
+    margin-bottom: 1rem !important;
+    color: rgba(245,242,238,0.55) !important;
+  }
+  .hero-eyebrow::before {
+    width: 18px !important;
+  }
+
+  /* ── HEADLINE ── */
+  .hero h1 {
+    font-size: clamp(2.2rem, 8.5vw, 3rem) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.025em !important;
+    margin-bottom: 1.25rem !important;
+    max-width: 100% !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* ── BODY COPY ── */
+  .hero-sub {
+    font-size: 0.9rem !important;
+    line-height: 1.75 !important;
+    color: rgba(245,242,238,0.82) !important;
+    max-width: 88% !important;
+    margin-bottom: 2rem !important;
+    font-weight: 300 !important;
+  }
+
+  /* ── CTA BUTTONS ── */
+  .hero-actions {
+    flex-direction: column !important;
+    gap: 10px !important;
+    margin-bottom: 2.5rem !important;
+    width: 100% !important;
+  }
+  .hero-actions .glass-btn-wrap {
+    width: 100% !important;
+    display: block !important;
+  }
+  .hero-actions .glass-btn {
+    width: 100% !important;
+    display: block !important;
+  }
+  .hero-actions .glass-btn-text {
+    width: 100% !important;
+    padding: 13px 20px !important;
+    font-size: 0.82rem !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    letter-spacing: 0.08em !important;
+  }
+  /* Second button (See how it works) — lighter style */
+  .hero-actions .glass-btn-wrap:nth-child(2) .glass-btn-text {
+    background: rgba(255,255,255,0.06) !important;
+    border-color: rgba(255,255,255,0.15) !important;
+    color: rgba(245,242,238,0.6) !important;
+  }
+
+  /* ── STATS / SOCIAL PROOF ── */
+  .hero-social-proof {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.25rem 1rem !important;
+    padding-top: 1.75rem !important;
+    border-top: 1px solid rgba(245,242,238,0.1) !important;
+    width: 100% !important;
+  }
+  /* Last item spans full width if odd number */
+  .hp-item:last-child:nth-child(odd) {
+    grid-column: 1 / -1 !important;
+  }
+  .hp-item {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+  }
+  .hp-item strong {
+    font-size: 2rem !important;
+    font-weight: 300 !important;
+    color: #FFFFFF !important;
+    letter-spacing: -0.03em !important;
+    line-height: 1 !important;
+    display: block !important;
+  }
+  .hp-item span {
+    font-size: 0.68rem !important;
+    color: rgba(245,242,238,0.5) !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+    line-height: 1.4 !important;
+    display: block !important;
+    white-space: normal !important;
+  }
+
+  /* ── HIDE FLOATING STATS ON MOBILE ── */
+  .float-stat { display: none !important; }
+
+  /* ── HERO VISUAL (cards) ── */
+  .hero-visual,
+  .hero-card-stack,
+  .hcard { display: none !important; }
+
+}
+
+/* Extra small phones */
+@media (max-width: 390px) {
+  .hero h1 {
+    font-size: 2rem !important;
+  }
+  .hero-sub {
+    font-size: 0.85rem !important;
+    max-width: 100% !important;
+  }
+  .hp-item strong {
+    font-size: 1.7rem !important;
+  }
+}
 </style>
 </head>
 <body>
