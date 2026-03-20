@@ -1856,53 +1856,74 @@ td { padding: 14px 16px; font-size: 1rem; color: var(--ink3); vertical-align: mi
 
 
 <!-- ══ PHONE MOCKUP SECTION ══════════════════════════════════ -->
-<section class="phone-bg-section" style="position:relative;min-height:90vh;display:flex;align-items:center;overflow:hidden;">
+<section style="padding:8rem 0;background:#050505;overflow:hidden;position:relative;">
 
-  <!-- Background image — three phones -->
-  <div style="position:absolute;inset:0;background-image:url('https://res.cloudinary.com/dhdjwit25/image/upload/f_auto,q_auto/Untitled_design-2_dzvtje');background-size:cover;background-position:center center;"></div>
+  <!-- Ambient glow -->
+  <div style="position:absolute;top:50%;right:20%;transform:translateY(-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(45,106,79,0.1) 0%,transparent 65%);pointer-events:none;filter:blur(40px);"></div>
 
-  <!-- Left-to-right dark gradient so text is readable -->
-  <div style="position:absolute;inset:0;background:linear-gradient(to right, rgba(5,5,5,0.92) 0%, rgba(5,5,5,0.75) 35%, rgba(5,5,5,0.25) 65%, rgba(5,5,5,0.05) 100%);"></div>
-  <!-- Bottom fade -->
-  <div style="position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to top,rgba(5,5,5,0.6),transparent);"></div>
+  <div style="max-width:1200px;margin:0 auto;padding:0 2.5rem;display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:center;">
 
-  <!-- Content -->
-  <div style="position:relative;z-index:1;padding:6rem 2.5rem;max-width:1140px;margin:0 auto;width:100%;" data-reveal>
-    <div style="max-width:580px;">
-      <div style="font-size:0.9rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#4DB57A;margin-bottom:1.5rem;display:flex;align-items:center;gap:10px;">
-        <span style="width:22px;height:1px;background:#4DB57A;display:block;"></span>
+    <!-- LEFT — TEXT -->
+    <div data-reveal>
+      <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#4DB57A;margin-bottom:1.5rem;display:flex;align-items:center;gap:10px;">
+        <span style="width:22px;height:1px;background:#4DB57A;display:block;flex-shrink:0;"></span>
         See it in action
       </div>
-      <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(3.8rem,7vw,6.5rem);font-weight:300;line-height:1.05;letter-spacing:-0.025em;color:#F0EDE8;margin-bottom:1.75rem;">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5.5vw,5.5rem);font-weight:300;line-height:1.05;letter-spacing:-0.025em;color:#F0EDE8;margin-bottom:1.75rem;">
         Your store.<br>Your audience.<br><em style="color:#4DB57A;font-style:italic;font-weight:400;">Your income.</em>
       </div>
-      <div style="font-size:1.3rem;color:rgba(240,237,232,0.62);line-height:1.8;max-width:480px;margin-bottom:2.5rem;font-weight:300;font-family:'DM Sans',sans-serif;">
+      <div style="font-size:1.05rem;color:rgba(240,237,232,0.5);line-height:1.85;max-width:400px;margin-bottom:2.5rem;font-weight:300;font-family:'DM Sans',sans-serif;">
         Every recommendation you make already drives purchases. DELT makes sure you get paid for every single one.
       </div>
-      <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:3rem;">
-        <div style="display:flex;align-items:center;gap:14px;">
-          <div style="width:2px;height:28px;background:linear-gradient(to bottom,#4DB57A,rgba(77,181,122,0.15));border-radius:1px;flex-shrink:0;"></div>
-          <div style="font-size:1.15rem;color:rgba(240,237,232,0.72);font-family:'DM Sans',sans-serif;">Add any product link — image and details fetched automatically</div>
+      <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:3rem;">
+        <div style="display:flex;align-items:center;gap:16px;">
+          <div style="width:2px;height:32px;background:linear-gradient(to bottom,#4DB57A,rgba(77,181,122,0.1));border-radius:1px;flex-shrink:0;"></div>
+          <div style="font-size:1rem;color:rgba(240,237,232,0.65);font-family:'DM Sans',sans-serif;font-weight:300;">Add any product link — image and details fetched automatically</div>
         </div>
-        <div style="display:flex;align-items:center;gap:14px;">
-          <div style="width:2px;height:28px;background:linear-gradient(to bottom,#4DB57A,rgba(77,181,122,0.15));border-radius:1px;flex-shrink:0;"></div>
-          <div style="font-size:1.15rem;color:rgba(240,237,232,0.72);font-family:'DM Sans',sans-serif;">Unique code auto-generated. Share once. Earn for weeks.</div>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <div style="width:2px;height:32px;background:linear-gradient(to bottom,#4DB57A,rgba(77,181,122,0.1));border-radius:1px;flex-shrink:0;"></div>
+          <div style="font-size:1rem;color:rgba(240,237,232,0.65);font-family:'DM Sans',sans-serif;font-weight:300;">Unique code auto-generated. Share once. Earn for weeks.</div>
         </div>
-        <div style="display:flex;align-items:center;gap:14px;">
-          <div style="width:2px;height:28px;background:linear-gradient(to bottom,#4DB57A,rgba(77,181,122,0.15));border-radius:1px;flex-shrink:0;"></div>
-          <div style="font-size:1.15rem;color:rgba(240,237,232,0.72);font-family:'DM Sans',sans-serif;">Commission hits your UPI every cycle. Zero chasing.</div>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <div style="width:2px;height:32px;background:linear-gradient(to bottom,#4DB57A,rgba(77,181,122,0.1));border-radius:1px;flex-shrink:0;"></div>
+          <div style="font-size:1rem;color:rgba(240,237,232,0.65);font-family:'DM Sans',sans-serif;font-weight:300;">Commission hits your UPI every cycle. Zero chasing.</div>
         </div>
       </div>
       <div class="glass-btn-wrap glass-btn-sage" onclick="smoothScroll('#waitlist')" style="display:inline-flex;">
         <button class="glass-btn">
-          <span class="glass-btn-text" style="padding:14px 32px;font-size:1rem;font-family:'Cormorant Garamond',serif;font-weight:500;letter-spacing:0.05em;">
+          <span class="glass-btn-text" style="padding:13px 28px;font-size:0.95rem;font-family:'Cormorant Garamond',serif;font-weight:500;letter-spacing:0.05em;">
             Claim Your Store →
           </span>
         </button>
         <div class="glass-btn-shadow"></div>
       </div>
     </div>
+
+    <!-- RIGHT — PHONES IMAGE -->
+    <div style="position:relative;" data-reveal-delay>
+      <!-- Soft fade on left edge so phones blend into section -->
+      <div style="position:absolute;top:0;left:-1px;bottom:0;width:80px;background:linear-gradient(to right,#050505,transparent);z-index:2;pointer-events:none;"></div>
+      <!-- Bottom fade -->
+      <div style="position:absolute;bottom:-1px;left:0;right:0;height:60px;background:linear-gradient(to top,#050505,transparent);z-index:2;pointer-events:none;"></div>
+      <img
+        src="https://res.cloudinary.com/dhdjwit25/image/upload/f_auto,q_auto/Untitled_design-2_dzvtje"
+        alt="DELT Creator Stores"
+        style="width:100%;display:block;border-radius:8px;opacity:0.92;"
+        onerror="this.style.display='none'"
+      >
+    </div>
+
   </div>
+
+  <!-- Mobile layout -->
+  <style>
+    @media (max-width: 768px) {
+      .phone-split-section { padding: 5rem 1.25rem !important; }
+      .phone-split-section > div > div { grid-template-columns: 1fr !important; gap: 3rem !important; }
+      .phone-split-section img { border-radius: 8px !important; }
+    }
+  </style>
+
 </section>
 
 
